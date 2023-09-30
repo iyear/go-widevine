@@ -43,8 +43,7 @@ func (m Module) signed_response(response []byte) ([]byte, error) {
    if err != nil {
       return nil, err
    }
-   ok := mes.Message(2) // License
-   if !ok {
+   if !mes.Message(2) { // License
       return nil, errors.New("License")
    }
    for _, f := range mes {
